@@ -6,10 +6,6 @@
     />
     <a href="https://angular.dev">https://angular.dev</a>
     <h1>Todo App</h1>
-    @if(!store.loading()) {
-    <todos-list [todos]="store.filteredTodos()" />
-    }@else {
-    <mat-spinner></mat-spinner>
-    }
+    <todos-manager />
   </div>
 </div>

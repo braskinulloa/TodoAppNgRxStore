@@ -1,0 +1,15 @@
+<todos-input (todoEnter)="onAddTodo($event)" />
+<h1>NgRx Signal Store Todo App</h1>
+<todos-filter
+  [todoFilter]="store.filter()"
+  (todoFilterChange)="onFilterChange($event)"
+/>
+@if(!store.loading()) {
+<todos-list
+  [todos]="store.filteredTodos()"
+  (todoDelete)="onDeleteTodo($event)"
+  (todoChange)="onTodoToggled($event.id, $event.completed)"
+/>
+}@else {
+<mat-spinner></mat-spinner>
+}

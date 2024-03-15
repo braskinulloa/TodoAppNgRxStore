@@ -1,0 +1,9 @@
+<mat-form-field class="todo-input">
+  <mat-label>Enter a Todo and press Enter </mat-label>
+  <input
+    matInput
+    #input
+    (keyup.enter)="todoEnter.emit(input.value); input.value = ''; input.blur()"
+  />
+  <mat-icon matSuffix>edit</mat-icon>
+</mat-form-field>
